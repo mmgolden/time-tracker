@@ -62,6 +62,7 @@
     text-transform: uppercase;
     color: #fff;
     border-color: transparent;
+    border-style: solid;
     border-width: 2px;
     font-weight: $bold-font-weight;
     font-size: 1.125rem;
@@ -79,6 +80,7 @@
     &:hover {
         color: $start-color;
         border-color: $start-color;
+        border-style: solid;
     }
 }
 .stop {
@@ -86,6 +88,7 @@
     &:hover {
         color: $stop-color;
         border-color: $stop-color;
+        border-style: solid;
     }
 }
 .delete-btn {
