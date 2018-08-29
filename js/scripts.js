@@ -1,8 +1,6 @@
 // Data controller
 const dataController = (function() {
 
-    // Delete a project from data structure
-
     // Project class
     class Project {
         constructor(id, title) {
@@ -31,13 +29,35 @@ const dataController = (function() {
             }
 
             // Create a new instance
-            let newProject = new Project(ID, title);
+            const newProject = new Project(ID, title);
 
             // Add the project to the project data
             projects.allProjects.push(newProject);
 
             // Return the new project
             return newProject;
+
+        },
+
+        // Update project title in data structure
+        updateTitle: function(newTitle, ID) {
+
+            // Find the object with matching ID
+            const projectToUpdate = projects.allProjects.find(project => project.id === ID);
+            
+            // Update the title
+            projectToUpdate.title = newTitle;
+
+        },
+
+        // Delete a project from data structure
+        deleteData: function(ID) {
+
+            const currentProject = projects.allProjects.map(current => current.id);
+            const index = currentProject.indexOf(ID);
+            if (index !== -1) {
+                projects.allProjects.splice(index, 1);
+            }
 
         },
 
@@ -69,8 +89,6 @@ const UIController = (function() {
     // Create variables from DOMstrings
     const {projectForm, inputValue, projectList, hoursSpan, minutesSpan, secondsSpan} = DOMstrings;
 
-    // Delete project from UI
-
     // Publicly accessible
     return {
 
@@ -83,7 +101,7 @@ const UIController = (function() {
         addProjectToUI: function(obj) {
 
             // Create markup
-            let html = `
+            const html = `
             <li id="project-${obj.id}">
                 <h2>${obj.title}</h2>
                 <div class="timer">
@@ -154,12 +172,13 @@ const UIController = (function() {
             title.textContent = input.value;
             parent.insertBefore(title, input);
             parent.removeChild(input);
+            return title.textContent;
 
         },
 
         // Delete the project in the UI
         delete: function(projectID) {
-            let projectToDelete = document.getElementById(projectID);
+            const projectToDelete = document.getElementById(projectID);
             projectToDelete.parentNode.removeChild(projectToDelete);
         },
 
@@ -189,18 +208,20 @@ const controller = (function(dataCtrl, UICtrl) {
 
         projects.addEventListener('click', function(event) {
 
+            const target = event.target;
+
             // When the start button is clicked
-            if (event.target.className === 'btn start' || event.target.className === 'btn start stop') {
+            if (target.className === 'btn start' || target.className === 'btn start stop') {
                 timer(event);
             }
 
             // When the project title is clicked
-            if (event.target.tagName === 'H2') {
+            if (target.tagName === 'H2') {
                 editTitle(event);
             }
 
             // When the delete button is clicked
-            if (event.target.className === 'delete-btn' || event.target.tagName === 'I') {
+            if (target.className === 'delete-btn') {
                 deleteProject(event);
             }
 
@@ -221,14 +242,15 @@ const controller = (function(dataCtrl, UICtrl) {
         // Prevent default behavior
         event.preventDefault();
 
-        // Get the input
-        let input = UICtrl.getInput();
+        // Get and sanitize the input
+        const dirty = UICtrl.getInput().value;
+        const clean = DOMPurify.sanitize(dirty);
 
         // If the input is not empty
-        if (input.value !== '') {
+        if (clean !== '') {
             
             // Add the project to the data controller
-            let newProject = dataCtrl.addProject(input.value);
+            const newProject = dataCtrl.addProject(clean);
 
             // Add the project to the UI
             UICtrl.addProjectToUI(newProject);
@@ -242,7 +264,7 @@ const controller = (function(dataCtrl, UICtrl) {
     // Timer
     const timer = function(event) {
 
-        let target = event.target;
+        const target = event.target;
 
         // Toggle the button color
         target.classList.toggle('stop');
@@ -270,17 +292,27 @@ const controller = (function(dataCtrl, UICtrl) {
 
     // Save the project title
     const saveTitle = function(event) {
-        UICtrl.save(event);
+
+        const ID = parseInt(event.target.parentNode.id.slice(8));
+
+        // Update the project title in the UI
+        const newTitle = UICtrl.save(event);
+
+        // Update the project title in the data structure
+        dataCtrl.updateTitle(newTitle, ID);
+
     };
 
     // Delete project
     const deleteProject = function(event) {
-        let target = event.target;
-        let projectID = target.parentNode.id;
+        const target = event.target;
+        const projectID = target.parentNode.id;
+        const ID = parseInt(target.parentNode.id.slice(8));
 
         if (projectID) {
 
             // Delete the project from the data structure
+            dataCtrl.deleteData(ID);
 
             // Delete the item from the UI
             UICtrl.delete(projectID);

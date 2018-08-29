@@ -7,3 +7,6 @@ body {
 p {
     margin: 0;
 }
+button > * {
+    pointer-events: none;
+}
