@@ -1,7 +1,8 @@
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 p {
@@ -14,10 +15,19 @@ button > * {
 
 main {
   padding: 40px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -28,12 +38,24 @@ main {
 
 header {
   background: #4A00E0;
+  background: -webkit-gradient(linear, left bottom, left top, from(#4A00E0), to(#8E2DE2));
+  background: -webkit-linear-gradient(bottom, #4A00E0 0%, #8E2DE2 100%);
+  background: -o-linear-gradient(bottom, #4A00E0 0%, #8E2DE2 100%);
   background: linear-gradient(to top, #4A00E0 0%, #8E2DE2 100%);
   padding: 40px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -57,16 +79,28 @@ header h1 {
 
 form {
   width: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media screen and (min-width: 768px) {
   form {
     max-width: 650px;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }
 
@@ -96,6 +130,8 @@ input[type="submit"] {
   padding: 15px;
   text-transform: uppercase;
   font-weight: 700;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
@@ -130,13 +166,23 @@ input[type="submit"]:hover {
 }
 
 .projects li {
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
   padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   margin-bottom: 30px;
 }
@@ -156,8 +202,13 @@ input[type="submit"]:hover {
 @media screen and (min-width: 768px) {
   .projects li {
     padding: 25px;
-    flex-direction: row;
-    justify-content: flex-end;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 }
 
@@ -171,8 +222,14 @@ input[type="submit"]:hover {
   .timer {
     margin-bottom: 0;
     margin-right: 15px;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    -o-transition: transform 0.5s;
     transition: transform 0.5s;
-    transform: translateX(50px);
+    transition: transform 0.5s, -webkit-transform 0.5s;
+    -webkit-transform: translateX(50px);
+        -ms-transform: translateX(50px);
+            transform: translateX(50px);
   }
 }
 
@@ -201,7 +258,11 @@ input[type="submit"]:hover {
   border-width: 2px;
   font-weight: 700;
   font-size: 1.125rem;
+  -webkit-transition: background 0.3s, -webkit-transform 0.5s;
+  transition: background 0.3s, -webkit-transform 0.5s;
+  -o-transition: background 0.3s, transform 0.5s;
   transition: background 0.3s, transform 0.5s;
+  transition: background 0.3s, transform 0.5s, -webkit-transform 0.5s;
 }
 
 .btn:hover {
@@ -211,7 +272,9 @@ input[type="submit"]:hover {
 @media screen and (min-width: 768px) {
   .btn {
     margin-right: 15px;
-    transform: translateX(50px);
+    -webkit-transform: translateX(50px);
+        -ms-transform: translateX(50px);
+            transform: translateX(50px);
   }
 }
 
@@ -239,12 +302,24 @@ input[type="submit"]:hover {
   width: 42px;
   height: 42px;
   border: 2px solid #D00202;
-  opacity: 0;
+  opacity: 1;
   position: absolute;
   bottom: 25px;
   right: 30px;
   color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-transition: background 0.3s, opacity 0.3s, -webkit-transform 0.5s;
+  transition: background 0.3s, opacity 0.3s, -webkit-transform 0.5s;
+  -o-transition: background 0.3s, opacity 0.3s, transform 0.5s;
   transition: background 0.3s, opacity 0.3s, transform 0.5s;
+  transition: background 0.3s, opacity 0.3s, transform 0.5s, -webkit-transform 0.5s;
 }
 
 .delete-btn i {
@@ -258,10 +333,13 @@ input[type="submit"]:hover {
 
 @media screen and (min-width: 768px) {
   .delete-btn {
+    opacity: 0;
     position: relative;
     bottom: inherit;
     right: inherit;
-    transform: translateX(50px);
+    -webkit-transform: translateX(50px);
+        -ms-transform: translateX(50px);
+            transform: translateX(50px);
   }
 }
 
@@ -275,7 +353,9 @@ input[type="submit"]:hover {
   .projects li:hover .delete-btn,
   .projects li:hover .timer,
   .projects li:hover .btn {
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 
