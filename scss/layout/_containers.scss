@@ -1,0 +1,11 @@
+// Containers
+main {
+    padding: 40px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media screen and (min-width: 768px) {
+        padding: 80px 30px;
+    }
+}

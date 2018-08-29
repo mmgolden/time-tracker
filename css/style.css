@@ -1,0 +1,339 @@
+/* line 2, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/base/_base.scss */
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* line 7, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/base/_base.scss */
+p {
+  margin: 0;
+}
+
+/* line 2, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/layout/_containers.scss */
+main {
+  padding: 40px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 2, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/layout/_containers.scss */
+  main {
+    padding: 80px 30px;
+  }
+}
+
+/* line 2, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_header.scss */
+header {
+  background: #4A00E0;
+  background: linear-gradient(to top, #4A00E0 0%, #8E2DE2 100%);
+  padding: 40px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 2, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_header.scss */
+  header {
+    padding: 80px 30px;
+  }
+}
+
+/* line 13, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_header.scss */
+header h1 {
+  color: #fff;
+  font-weight: 300;
+  font-size: 2.25rem;
+  margin: 0 0 30px 0;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 13, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_header.scss */
+  header h1 {
+    font-size: 3rem;
+  }
+}
+
+/* line 2, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_form.scss */
+form {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 2, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_form.scss */
+  form {
+    max-width: 650px;
+    flex-direction: row;
+  }
+}
+
+/* line 13, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_form.scss */
+input[type="text"] {
+  width: 100%;
+  border-color: transparent;
+  padding: 15px 20px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 13, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_form.scss */
+  input[type="text"] {
+    margin-bottom: 0;
+    margin-right: 20px;
+    padding: 20px 30px;
+  }
+}
+
+/* line 25, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_form.scss */
+input[type="submit"] {
+  border-color: transparent;
+  border-width: 2px;
+  width: 120px;
+  background: #00C1D9;
+  color: #fff;
+  border-radius: 30px;
+  padding: 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+
+/* line 36, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_form.scss */
+input[type="submit"]:hover {
+  background: transparent;
+  border-color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 25, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_form.scss */
+  input[type="submit"] {
+    width: 150px;
+    padding: 20px;
+  }
+}
+
+/* line 2, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+.projects {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 2, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+  .projects {
+    max-width: 80%;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  /* line 2, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+  .projects {
+    max-width: 60%;
+  }
+}
+
+/* line 13, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+.projects li {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+/* line 23, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+.projects li h2 {
+  font-size: 1.125rem;
+  color: #4A4A4A;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 23, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+  .projects li h2 {
+    font-size: 1.313rem;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* line 13, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+  .projects li {
+    padding: 25px;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
+/* line 37, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+.timer {
+  text-align: center;
+  color: #4A4A4A;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 37, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+  .timer {
+    margin-bottom: 0;
+    margin-right: 15px;
+    transition: transform 0.5s;
+    transform: translateX(50px);
+  }
+}
+
+/* line 48, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+.timer-label {
+  margin-bottom: 5px;
+}
+
+/* line 51, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+.timer-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 51, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+  .timer-text {
+    font-size: 1.875rem;
+  }
+}
+
+/* line 58, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+.btn {
+  padding: 13px;
+  width: 120px;
+  border-radius: 60px;
+  text-transform: uppercase;
+  color: #fff;
+  border-color: transparent;
+  border-width: 2px;
+  font-weight: 700;
+  font-size: 1.125rem;
+  transition: background 0.3s, transform 0.5s;
+}
+
+/* line 69, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+.btn:hover {
+  background: transparent;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 58, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+  .btn {
+    margin-right: 15px;
+    transform: translateX(50px);
+  }
+}
+
+/* line 77, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+.start {
+  background: #21D324;
+}
+
+/* line 79, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+.start:hover {
+  color: #21D324;
+  border-color: #21D324;
+}
+
+/* line 84, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+.stop {
+  background: #D00202;
+}
+
+/* line 86, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+.stop:hover {
+  color: #D00202;
+  border-color: #D00202;
+}
+
+/* line 91, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+.delete-btn {
+  background: #D00202;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  border: 2px solid #D00202;
+  opacity: 0;
+  position: absolute;
+  bottom: 25px;
+  right: 30px;
+  color: #fff;
+  transition: background 0.3s, opacity 0.3s, transform 0.5s;
+}
+
+/* line 103, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+.delete-btn i {
+  font-size: 1.5rem;
+}
+
+/* line 106, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+.delete-btn:hover {
+  color: #D00202;
+  background: transparent;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 91, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+  .delete-btn {
+    position: relative;
+    bottom: inherit;
+    right: inherit;
+    transform: translateX(50px);
+  }
+}
+
+/* line 118, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+.projects li:hover .delete-btn,
+.projects li:hover .timer,
+.projects li:hover .btn {
+  opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 118, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+  .projects li:hover .delete-btn,
+  .projects li:hover .timer,
+  .projects li:hover .btn {
+    transform: translateX(0);
+  }
+}
+
+/* line 127, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+.projects input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1.125rem;
+  color: #4A4A4A;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid #a2a2a2;
+}
+
+@media screen and (min-width: 768px) {
+  /* line 127, /Users/melinda/Documents/Projects/time-tracker/time-tracker/scss/components/_project.scss */
+  .projects input {
+    width: 50%;
+    font-size: 1.313rem;
+    margin-bottom: 0;
+    margin-right: auto;
+  }
+}
+
+/*# sourceMappingURL=../css/style.map */

@@ -1,0 +1,44 @@
+// Form
+form {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media screen and (min-width: 768px) {
+        max-width: 650px;
+        flex-direction: row;
+    }
+}
+input[type="text"] {
+    width: 100%;
+    border-color: transparent;
+    padding: 15px 20px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    @media screen and (min-width: 768px) {
+        margin-bottom: 0;
+        margin-right: 20px;
+        padding: 20px 30px;
+    }
+}
+input[type="submit"] {
+    border-color: transparent;
+    border-width: 2px;
+    width: 120px;
+    background: $header-btn-color;
+    color: #fff;
+    border-radius: 30px;
+    padding: 15px;
+    text-transform: uppercase;
+    font-weight: $bold-font-weight;
+    transition: all 0.3s;
+    &:hover {
+        background: transparent;
+        border-color: #fff;
+    }
+    @media screen and (min-width: 768px) {
+        width: 150px;
+        padding: 20px;
+    }
+}

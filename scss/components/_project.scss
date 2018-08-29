@@ -1,0 +1,141 @@
+// Project
+.projects {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    @media screen and (min-width: 768px) {
+        max-width: 80%;
+    }
+    @media screen and (min-width: 991px) {
+        max-width: 60%;
+    }
+}
+.projects li {
+    box-shadow: 0 0 4px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 30px;
+    h2 {
+        font-size: 1.125rem;
+        color: $primary-font-color;
+        @media screen and (min-width:768px) {
+            font-size: 1.313rem;
+            margin-right: auto;
+        }
+    }
+    @media screen and (min-width: 768px) {
+        padding: 25px;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+}
+.timer {
+    text-align: center;
+    color: $primary-font-color;
+    margin-bottom: 20px;
+    @media screen and (min-width:768px) {
+        margin-bottom: 0;
+        margin-right: 15px;
+        transition: transform 0.5s;
+        transform: translateX(50px);
+    }
+}
+.timer-label {
+    margin-bottom: 5px;
+}
+.timer-text {
+    font-size: 1.5rem;
+    font-weight: $bold-font-weight;
+    @media screen and (min-width: 768px) {
+        font-size: 1.875rem;
+    }
+}
+.btn {
+    padding: 13px;
+    width: 120px;
+    border-radius: 60px;
+    text-transform: uppercase;
+    color: #fff;
+    border-color: transparent;
+    border-width: 2px;
+    font-weight: $bold-font-weight;
+    font-size: 1.125rem;
+    transition: background 0.3s, transform 0.5s;
+    &:hover {
+        background: transparent;
+    }
+    @media screen and (min-width: 768px) {
+        margin-right: 15px;
+        transform: translateX(50px);
+    }
+}
+.start {
+    background: $start-color;
+    &:hover {
+        color: $start-color;
+        border-color: $start-color;
+    }
+}
+.stop {
+    background: $stop-color;
+    &:hover {
+        color: $stop-color;
+        border-color: $stop-color;
+    }
+}
+.delete-btn {
+    background: $stop-color;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    border: 2px solid $stop-color;
+    opacity: 0;
+    position: absolute;
+    bottom: 25px;
+    right: 30px;
+    color: #fff;
+    transition: background 0.3s, opacity 0.3s, transform 0.5s;
+    i {
+        font-size: 1.5rem;
+    }
+    &:hover {
+        color: $stop-color;
+        background: transparent;
+    }
+    @media screen and (min-width: 768px) {
+        position: relative;
+        bottom: inherit;
+        right: inherit;
+        transform: translateX(50px);
+    }
+}
+.projects li:hover {
+    .delete-btn,
+    .timer,
+    .btn {
+        opacity: 1;
+        @media screen and (min-width: 768px) {
+            transform: translateX(0);
+        }
+    }
+}
+.projects input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1.125rem;
+    color: $primary-font-color;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #a2a2a2;
+    @media screen and (min-width:768px) {
+        width: 50%;
+        font-size: 1.313rem;
+        margin-bottom: 0;
+        margin-right: auto;
+    }
+}
